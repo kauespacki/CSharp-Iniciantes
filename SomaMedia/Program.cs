@@ -19,26 +19,17 @@ for (int i = 1; i < quantidadeValor + 1; i++)
     listaNumeros.Add(numeroValor);
 }
 
-Soma(listaNumeros);
-MediaValores(listaNumeros);
+var soma = Soma(listaNumeros);
+var media = MediaValores(listaNumeros);
+Console.WriteLine($"A soma é {soma}");
+Console.WriteLine($"A media é {media}");
 
-void Soma(List<double> lista)
+double Soma(List<double> lista)
 {
-    double contador = 0;
-    foreach (var i in lista)
-    {
-        contador += i;
-    }
-    Console.WriteLine($"A soma dos valores é {contador}");
+    return lista.Sum();
 }
 
-void MediaValores(List<double> lista)
+double MediaValores(List<double> lista)
 {
-    double contador = 0;
-    foreach (var i in lista)
-    {
-        contador += i;
-    }
-    var media = contador / lista.Count;
-    Console.WriteLine($"A média dos valores é {media}");
+    return lista.Average();
 }
